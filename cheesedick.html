@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Pay - Educational Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #1a1a1a;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo {
+            background: #000000;
+            padding: 2rem 2.5rem;
+            border-radius: 1.5rem;
+            display: inline-block;
+        }
+
+        .logo-text {
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .apple-icon {
+            font-size: 3rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            letter-spacing: -0.02em;
+        }
+
+        .steps {
+            margin-bottom: 3rem;
+            text-align: left;
+            padding: 0 1rem;
+        }
+
+        .step {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #e5e5e5;
+        }
+
+        .step-number {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .important {
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .location-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .location-btn {
+            background: #2a2a2a;
+            color: #ffffff;
+            padding: 1.25rem 2rem;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .location-btn:hover {
+            background: #3a3a3a;
+            transform: translateY(-2px);
+        }
+
+        .location-btn:active {
+            transform: translateY(0);
+        }
+
+        .verification {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            color: #a0a0a0;
+        }
+
+        .checkmark {
+            width: 18px;
+            height: 18px;
+            background: #4CAF50;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        .stats {
+            background: #0a0a0a;
+            border: 1px solid #2a2a2a;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #808080;
+            font-weight: 500;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .logo-text {
+                font-size: 2.5rem;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .stat {
+                padding: 0.5rem 0;
+                border-bottom: 1px solid #2a2a2a;
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <div class="logo">
+                <div class="logo-text">
+                    <span class="apple-icon"></span>
+                    <span>Pay</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <h1>Follow the steps below!</h1>
+
+        <!-- Steps -->
+        <div class="steps">
+            <div class="step">
+                <span class="step-number">1. Click button below</span> 👇
+            </div>
+            <div class="step">
+                <span class="step-number">2. Enter email & info</span> ✍️
+            </div>
+            <div class="step">
+                <span class="step-number">3. Complete deals</span> <span class="important">(IMPORTANT)</span> 📱
+            </div>
+            <div class="step">
+                <span class="step-number">4. Claim reward!</span> 💸
+            </div>
+        </div>
+
+        <!-- Location Selection -->
+        <h2>Where are you located?</h2>
+
+        <div class="location-buttons">
+            <button class="location-btn">United States</button>
+            <button class="location-btn">Canada</button>
+        </div>
+
+        <!-- Verification Badge -->
+        <div class="verification">
+            <span class="checkmark">✓</span>
+            <span>Verified By TikTok</span>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-value">$829,145</span>
+                <span class="stat-label">Total Paid Out</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">4,714</span>
+                <span class="stat-label">People Online</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">86%</span>
+                <span class="stat-label">Users Completing</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
